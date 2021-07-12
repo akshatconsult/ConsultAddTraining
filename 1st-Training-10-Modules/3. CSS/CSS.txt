@@ -1,0 +1,689 @@
+1. Introduction
+
+What is CSS?
+CSS stands for Cascading Style Sheets
+CSS describes how HTML elements are to be displayed on screen, paper, or in other media
+CSS saves a lot of work. It can control the layout of multiple web pages all at once
+External stylesheets are stored in CSS files
+
+2. CSS Syntax
+p {
+  color: red;
+  text-align: center;
+}
+
+p is a selector in CSS (it points to the HTML element you want to style: <p>).
+color is a property, and red is the property value
+text-align is a property, and center is the property value
+
+3. CSS SELECTORS
+In this example only <p> elements with class="center" will be red and center-aligned: 
+
+p.center {
+  text-align: center;
+  color: red;
+}
+The CSS rule below will affect every HTML element on the page: 
+
+* {
+  text-align: center;
+  color: blue;
+}
+
+In this example we have grouped the selectors from the code above: 
+
+h1, h2, p {
+  text-align: center;
+  color: red;
+}
+
+Selector	Example	Example description
+#id	#firstname	Selects the element with id="firstname"
+.class	.intro	Selects all elements with class="intro"
+element.class	p.intro	Selects only <p> elements with class="intro"
+*	*	Selects all elements
+element	p	Selects all <p> elements
+element,element,..	div, p	Selects all <div> elements and all <p> elements
+
+4. CSS HOW TO
+<head>
+<link rel="stylesheet" href="mystyle.css">
+</head>
+
+
+Internal CSS
+An internal style sheet may be used if one single HTML page has a unique style.
+
+The internal style is defined inside the <style> element, inside the head section.
+
+
+Inline CSS
+An inline style may be used to apply a unique style for a single element.
+
+To use inline styles, add the style attribute to the relevant element. The style attribute can contain any CSS property.
+
+5. CSS Comments
+
+p {
+  color: red; /* Set text color to red */
+}
+</style>
+</head>
+<body>
+
+<h2>My Heading</h2>
+
+<!-- These paragraphs will be red -->
+<p>Hello World!</p>
+
+
+6. CSS BACKGROUNDS
+background-color
+background-image
+background-repeat
+background-attachment
+background-position
+background 
+
+div {
+  background-color: green;
+  opacity: 0.3;
+}
+
+Specify that the background image should scroll with the rest of the page:
+
+body {
+  background-image: url("img_tree.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: scroll;
+}
+
+7. CSS Border Style
+The border-style property specifies what kind of border to display.
+
+The following values are allowed:
+
+dotted - Defines a dotted border
+dashed - Defines a dashed border
+solid - Defines a solid border
+double - Defines a double border
+groove - Defines a 3D grooved border. The effect depends on the border-color value
+ridge - Defines a 3D ridged border. The effect depends on the border-color value
+inset - Defines a 3D inset border. The effect depends on the border-color value
+outset - Defines a 3D outset border. The effect depends on the border-color value
+none - Defines no border
+hidden - Defines a hidden border
+The border-style property can have from one to four values (for the top border, right border, bottom border, and the left border).
+
+p.dotted {border-style: dotted;}
+p.dashed {border-style: dashed;}
+p.solid {border-style: solid;}
+p.double {border-style: double;}
+p.groove {border-style: groove;}
+p.ridge {border-style: ridge;}
+p.inset {border-style: inset;}
+p.outset {border-style: outset;}
+p.none {border-style: none;}
+p.hidden {border-style: hidden;}
+p.mix {border-style: dotted dashed solid double;}
+
+
+p.one {
+  border-style: solid;
+  border-width: 5px;
+}
+p.one {
+  border-style: solid;
+  border-color: red;
+}
+
+8. CSS Margins
+
+
+Margin - Individual Sides
+CSS has properties for specifying the margin for each side of an element:
+
+margin-top
+margin-right
+margin-bottom
+margin-left
+All the margin properties can have the following values:
+
+auto - the browser calculates the margin
+length - specifies a margin in px, pt, cm, etc.
+% - specifies a margin in % of the width of the containing element
+inherit - specifies that the margin should be inherited from the parent element
+Tip: Negative values are allowed.
+
+
+Use the margin shorthand property with four values:
+
+p {
+  margin: 25px 50px 75px 100px;
+}
+
+If the margin property has one value:
+
+margin: 25px;
+all four margins are 25px
+
+The auto Value
+You can set the margin property to auto to horizontally center the element within its container.
+
+The element will then take up the specified width, and the remaining space will be split equally between the left and right margins
+
+
+The inherit Value
+This example lets the left margin of the <p class="ex1"> element be inherited from the parent element (<div>):
+
+
+9. CSS PADDING
+
+CSS Padding
+The CSS padding properties are used to generate space around an element's content, inside of any defined borders.
+
+
+Use the padding shorthand property with four values:
+
+div {
+  padding: 25px 50px 75px 100px;
+}
+
+If the padding property has two values:
+
+padding: 25px 50px;
+top and bottom paddings are 25px
+right and left paddings are 50px
+
+If the padding property has three values:
+
+padding: 25px 50px 75px;
+top padding is 25px
+right and left paddings are 50px
+bottom padding is 75px
+
+Property	Description
+padding	A shorthand property for setting all the padding properties in one declaration
+padding-bottom	Sets the bottom padding of an element
+padding-left	Sets the left padding of an element
+padding-right	Sets the right padding of an element
+padding-top	Sets the top padding of an element
+
+10. CSS HEIGHT/WIDTH
+All CSS Dimension Properties
+Property	Description
+height	Sets the height of an element
+max-height	Sets the maximum height of an element
+max-width	Sets the maximum width of an element
+min-height	Sets the minimum height of an element
+min-width	Sets the minimum width of an element
+width	Sets the width of an element
+
+11. CSS BOX MODEL
+In CSS, the term "box model" is used when talking about design and layout.
+
+The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content. 
+Demonstration of the box model:
+
+div {
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+}
+
+12. CSS OUTLINE
+
+An outline is a line that is drawn around elements, OUTSIDE the borders, to make the element "stand out".
+CSS has the following outline properties:
+
+outline-style
+outline-color
+outline-width
+outline-offset
+outline
+
+Example
+p.ex1 {outline: dashed;}
+p.ex2 {outline: dotted red;}
+p.ex3 {outline: 5px solid yellow;}
+p.ex4 {outline: thick ridge pink;}
+
+
+Property	Description
+outline	A shorthand property for setting outline-width, outline-style, and outline-color in one declaration
+outline-color	Sets the color of an outline
+outline-offset	Specifies the space between an outline and the edge or border of an element
+outline-style	Sets the style of an outline
+outline-width	Sets the width of an outline
+
+	
+13. CSS TEXT
+The direction and unicode-bidi properties can be used to change the text direction of an element:
+
+Example
+p {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+Text Decoration
+The text-decoration property is used to set or remove decorations from text.
+
+The value text-decoration: none; is often used to remove underlines from links:
+
+
+
+p.uppercase {
+  text-transform: uppercase;
+}
+
+p.lowercase {
+  text-transform: lowercase;
+}
+
+p.capitalize {
+  text-transform: capitalize;
+}
+Property	Description
+color	Sets the color of text
+direction	Specifies the text direction/writing direction
+letter-spacing	Increases or decreases the space between characters in a text
+line-height	Sets the line height
+text-align	Specifies the horizontal alignment of text
+text-decoration	Specifies the decoration added to text
+text-indent	Specifies the indentation of the first line in a text-block
+text-shadow	Specifies the shadow effect added to text
+text-transform	Controls the capitalization of text
+text-overflow	Specifies how overflowed content that is not displayed should be signaled to the user
+unicode-bidi	Used together with the direction property to set or return whether the text should be overridden to support multiple languages in the same document
+vertical-align	Sets the vertical alignment of an element
+white-space	Specifies how white-space inside an element is handled
+word-spacing	Increases or decreases the space between words in a text
+
+
+14. CSS FONTS
+In CSS, we use the font-family property to specify the font of a text.
+
+The font-family property should hold several font names as a "fallback" system, to ensure maximum compatibility between browsers/operating systems. Start with the font you want, and end with a generic family (to let the browser pick a similar font in the generic family, if no other fonts are available). The font names should be separated with comma.
+
+.p1 {
+  font-family: "Times New Roman", Times, serif;
+}
+Web safe fonts are fonts that are universally installed across all browsers and devices.
+
+Below are some commonly used font fallbacks, organized by the 5 generic font families:
+
+Serif
+Sans-serif
+Monospace
+Cursive
+Fantasy
+
+Property	Description
+font	Sets all the font properties in one declaration
+font-family	Specifies the font family for text
+font-size	Specifies the font size of text
+font-style	Specifies the font style for text
+font-variant	Specifies whether or not a text should be displayed in a small-caps font
+font-weight	Specifies the weight of a font
+
+15. CSS ICONS
+The simplest way to add an icon to your HTML page, is with an icon library, such as Font Awesome.
+
+Add the name of the specified icon class to any inline HTML element (like <i> or <span>).
+
+All the icons in the icon libraries below, are scalable vectors that can be customized with CSS (size, color, shadow, etc.)
+<head>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<i class="fas fa-cloud"></i>
+<i class="fas fa-heart"></i>
+
+
+16. CSS LINKS
+/* unvisited link */
+a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+
+17. CSS LISTS
+
+Property	Description
+list-style	Sets all the properties for a list in one declaration
+list-style-image	Specifies an image as the list-item marker
+list-style-position	Specifies the position of the list-item markers (bullet points)
+list-style-type	Specifies the type of list-item marker
+
+
+18. CSS TABLES
+table, th, td {
+  border: 1px solid black;
+}
+
+Add a container element (like <div>) with overflow-x:auto around the <table> element to make it responsive:
+
+Example
+<div style="overflow-x:auto;">
+
+
+19. CSS DISPLAY
+
+h1.hidden {
+  display: none;
+}
+visibility:hidden; also hides an element.
+
+Property	Description
+display	Specifies how an element should be displayed
+visibility	Specifies whether or not an element should be visible
+
+20. CSS MAX-WIDTH
+
+div.ex1 {
+  width: 500px;
+  margin: auto;
+  border: 3px solid #73AD21;
+}
+
+div.ex2 {
+  max-width: 500px;
+  margin: auto;
+  border: 3px solid #73AD21;
+}
+
+Tip: Resize the browser window to less than 500px wide, to see the difference between the two divs!
+
+
+21. CSS POSITION
+There are five different position values:
+
+static
+relative
+fixed
+absolute
+sticky
+
+Property	Description
+bottom	Sets the bottom margin edge for a positioned box
+clip	Clips an absolutely positioned element
+left	Sets the left margin edge for a positioned box
+position	Specifies the type of positioning for an element
+right	Sets the right margin edge for a positioned box
+top	Sets the top margin edge for a positioned box
+
+22. CSS OVERFLOW
+The overflow property specifies whether to clip the content or to add scrollbars when the content of an element is too big to fit in the specified area.
+
+The overflow property has the following values:
+
+visible - Default. The overflow is not clipped. The content renders outside the element's box
+hidden - The overflow is clipped, and the rest of the content will be invisible
+scroll - The overflow is clipped, and a scrollbar is added to see the rest of the content
+auto - Similar to scroll, but it adds scrollbars only when necessary
+
+23. CSS FLOAT
+The float property is used for positioning and formatting content e.g. let an image float left to the text in a container.
+
+The float property can have one of the following values:
+
+left - The element floats to the left of its container
+right - The element floats to the right of its container
+none - The element does not float (will be displayed just where it occurs in the text). This is default
+inherit - The element inherits the float value of its parent
+In its simplest use, the float property can be used to wrap text around images.
+
+The clear property specifies what elements can float beside the cleared element and on which side.
+
+24. CSS COMBINATORS
+A combinator is something that explains the relationship between the selectors.
+
+A CSS selector can contain more than one simple selector. Between the simple selectors, we can include a combinator.
+
+There are four different combinators in CSS:
+
+descendant selector (space)
+child selector (>)
+adjacent sibling selector (+)
+general sibling selector (~)
+
+Selector	Example	Example description
+element element	div p	Selects all <p> elements inside <div> elements
+element>element	div > p	Selects all <p> elements where the parent is a <div> element
+element+element	div + p	Selects the first <p> element that are placed immediately after <div> elements
+element1~element2	p ~ ul	Selects every <ul> element that are preceded by a <p> element
+
+
+25. CSS Pseudo-classes
+A pseudo-class is used to define a special state of an element.
+
+For example, it can be used to:
+
+Style an element when a user mouses over it
+Style visited and unvisited links differently
+Style an element when it gets focus
+
+
+26. CSS OPACITY
+img {
+  opacity: 0.5;
+}
+
+img:hover {
+  opacity: 1.0;
+}
+
+27. CSS ATTRIBUTE SELECTORS
+The [attribute] selector is used to select elements with a specified attribute.
+
+The following example selects all <a> elements with a target attribute:
+
+Example
+a[target] {
+  background-color: yellow;
+}
+
+a[target="_blank"] {
+  background-color: yellow;
+}
+
+Selector	Example	Example description
+[attribute]	[target]	Selects all elements with a target attribute
+[attribute=value]	[target=_blank]	Selects all elements with target="_blank"
+[attribute~=value]	[title~=flower]	Selects all elements with a title attribute containing the word "flower"
+[attribute|=value]	[lang|=en]	Selects all elements with a lang attribute value starting with "en"
+[attribute^=value]	a[href^="https"]	Selects every <a> element whose href attribute value begins with "https"
+[attribute$=value]	a[href$=".pdf"]	Selects every <a> element whose href attribute value ends with ".pdf"
+[attribute*=value]	a[href*="w3schools"]	Selects every <a> element whose href attribute value contains the substring "w3schools"
+
+28. CSS ROUDNED CORNERS
+Property	Description
+border-radius	A shorthand property for setting all the four border-*-*-radius properties
+border-top-left-radius	Defines the shape of the border of the top-left corner
+border-top-right-radius	Defines the shape of the border of the top-right corner
+border-bottom-right-radius	Defines the shape of the border of the bottom-right corner
+border-bottom-left-radius	Defines the shape of the border of the bottom-left corner
+
+29. CSS BORDER IMAGES
+Property	Description
+border-image	A shorthand property for setting all the border-image-* properties
+border-image-source	Specifies the path to the image to be used as a border
+border-image-slice	Specifies how to slice the border image
+border-image-width	Specifies the widths of the border image
+border-image-outset	Specifies the amount by which the border image area extends beyond the border box
+border-image-repeat	Specifies whether the border image should be repeated, rounded or stretched
+
+30. CSS BACKGROUNDS
+#example1 {
+  background-image: url(img_flwr.gif), url(paper.gif);
+  background-position: right bottom, left top;
+  background-repeat: no-repeat, repeat;
+}
+Property	Description
+background	A shorthand property for setting all the background properties in one declaration
+background-clip	Specifies the painting area of the background
+background-image	Specifies one or more background images for an element
+background-origin	Specifies where the background image(s) is/are positioned
+background-size	Specifies the size of the background image(s)
+
+31. CSS COLORS
+#p1 {background-color: rgba(255, 0, 0, 0.3);}  /* red with opacity */
+#p1 {background-color: hsl(120, 100%, 50%);}  /* green */
+#p1 {background-color: hsla(120, 100%, 50%, 0.3);}  /* green with opacity */
+
+32. CSS GRADIENTS
+CSS defines two types of gradients:
+
+Linear Gradients (goes down/up/left/right/diagonally)
+Radial Gradients (defined by their center)
+#grad {
+  background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+}
+
+33. CSS SHADOW EFFECTS
+With CSS you can add shadow to text and to elements.
+
+In these chapters you will learn about the following properties:
+
+text-shadow
+box-shadow
+
+The following example shows a white text with black shadow:
+Example
+ horizontal shadow (2px) and the vertical shadow (2px) blur(5px):
+h1 {
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+The CSS box-shadow property applies shadow to elements.
+div {
+  box-shadow: 10px 10px;
+}
+
+34. CSS TEXT EFFECTS
+Property	Description
+text-align-last	Specifies how to align the last line of a text
+text-justify	Specifies how justified text should be aligned and spaced
+text-overflow	Specifies how overflowed content that is not displayed should be signaled to the user
+word-break	Specifies line breaking rules for non-CJK scripts
+word-wrap	Allows long words to be able to be broken and wrap onto the next line
+writing-mode	Specifies whether lines of text are laid out horizontally or vertically
+
+
+35. CSS WEB FONTS
+Web fonts allow Web designers to use fonts that are not installed on the user's computer.
+
+When you have found/bought the font you wish to use, just include the font file on your web server, and it will be automatically downloaded to the user when needed.
+
+Your "own" fonts are defined within the CSS @font-face rule.
+
+In the @font-face rule; first define a name for the font (e.g. myFirstFont) and then point to the font file.
+
+Tip: Always use lowercase letters for the font URL. Uppercase letters can give unexpected results in IE.
+
+To use the font for an HTML element, refer to the name of the font (myFirstFont) through the font-family property:
+
+Example
+@font-face {
+  font-family: myFirstFont;
+  src: url(sansation_light.woff);
+}
+
+div {
+  font-family: myFirstFont;
+}
+
+36. CSS 2D TRANSFORMS
+CSS transforms allow you to move, rotate, scale, and skew elements.
+
+CSS Transform Properties
+The following table lists all the 2D transform properties:
+
+Property	Description
+transform	Applies a 2D or 3D transformation to an element
+transform-origin	Allows you to change the position on transformed elements
+CSS 2D Transform Methods
+Function	Description
+matrix(n,n,n,n,n,n)	Defines a 2D transformation, using a matrix of six values
+translate(x,y)	Defines a 2D translation, moving the element along the X- and the Y-axis
+translateX(n)	Defines a 2D translation, moving the element along the X-axis
+translateY(n)	Defines a 2D translation, moving the element along the Y-axis
+scale(x,y)	Defines a 2D scale transformation, changing the elements width and height
+scaleX(n)	Defines a 2D scale transformation, changing the element's width
+scaleY(n)	Defines a 2D scale transformation, changing the element's height
+rotate(angle)	Defines a 2D rotation, the angle is specified in the parameter
+skew(x-angle,y-angle)	Defines a 2D skew transformation along the X- and the Y-axis
+skewX(angle)	Defines a 2D skew transformation along the X-axis
+skewY(angle)	Defines a 2D skew transformation along the Y-axis
+
+
+37. CSS TRANSITIONS
+CSS transitions allows you to change property values smoothly, over a given duration.
+
+div {
+  transition: width 2s, height 4s;
+}
+Property	Description
+transition	A shorthand property for setting the four transition properties into a single property
+transition-delay	Specifies a delay (in seconds) for the transition effect
+transition-duration	Specifies how many seconds or milliseconds a transition effect takes to complete
+transition-property	Specifies the name of the CSS property the transition effect is for
+transition-timing-function	Specifies the speed curve of the transition effect
+
+
+38. CSS ANIMATIONS
+An animation lets an element gradually change from one style to another.
+
+You can change as many CSS properties you want, as many times as you want.
+
+To use CSS animation, you must first specify some keyframes for the animation.
+
+Keyframes hold what styles the element will have at certain times.
+
+@keyframes example {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+
+/* The element to apply the animation to */
+div {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+}
+Property	Description
+@keyframes	Specifies the animation code
+animation	A shorthand property for setting all the animation properties
+animation-delay	Specifies a delay for the start of an animation
+animation-direction	Specifies whether an animation should be played forwards, backwards or in alternate cycles
+animation-duration	Specifies how long time an animation should take to complete one cycle
+animation-fill-mode	Specifies a style for the element when the animation is not playing (before it starts, after it ends, or both)
+animation-iteration-count	Specifies the number of times an animation should be played
+animation-name	Specifies the name of the @keyframes animation
+animation-play-state	Specifies whether the animation is running or paused
+animation-timing-function	Specifies the speed curve of the animation

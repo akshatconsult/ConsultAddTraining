@@ -1,0 +1,507 @@
+0. INTRODUCTION
+XML plays an important role in many different IT systems.
+
+XML is often used for distributing data over the Internet.
+
+It is important (for all types of software developers!) to have a good understanding of XML.
+
+XML stands for eXtensible Markup Language
+XML is a markup language much like HTML
+XML was designed to store and transport data
+XML was designed to be self-descriptive
+XML is a W3C Recommendation
+
+This note is a note to Tove from Jani, stored as XML:
+
+<note>
+  <to>Tove</to>
+  <from>Jani</from>
+  <heading>Reminder</heading>
+  <body>Don't forget me this weekend!</body>
+</note>
+The XML above is quite self-descriptive:
+
+It has sender information.
+It has receiver information
+It has a heading
+It has a message body.
+But still, the XML above does not DO anything. XML is just information wrapped in tags.
+
+Someone must write a piece of software to send, receive, store, or display it:
+
+
+The Difference Between XML and HTML
+XML and HTML were designed with different goals:
+
+XML was designed to carry data - with focus on what data is
+HTML was designed to display data - with focus on how data looks
+XML tags are not predefined like HTML tags are
+
+
+1. XML TREE
+XML documents are formed as element trees.
+
+An XML tree starts at a root element and branches from the root to child elements.
+
+All elements can have sub elements (child elements):
+
+<root>
+  <child>
+    <subchild>.....</subchild>
+  </child>
+</root>
+
+XML uses a much self-describing syntax.
+
+A prolog defines the XML version and the character encoding:
+
+<?xml version="1.0" encoding="UTF-8"?>
+The next line is the root element of the document:
+
+<bookstore>
+The next line starts a <book> element:
+
+<book category="cooking">
+The <book> elements have 4 child elements: <title>, <author>, <year>, <price>.
+
+<title lang="en">Everyday Italian</title>
+<author>Giada De Laurentiis</author>
+<year>2005</year>
+<price>30.00</price>
+The next line ends the book element:
+
+</book>
+You can assume, from this example, that the XML document contains information about books in a bookstore.
+
+
+2. XML SYNTAX
+This line is called the XML prolog:
+
+<?xml version="1.0" encoding="UTF-8"?>
+The XML prolog is optional. If it exists, it must come first in the document.
+
+XML documents can contain international characters, 
+
+In XML, it is illegal to omit the closing tag. All elements must have a closing tag:
+
+<p>This is a paragraph.</p>
+<br />
+
+There are 5 pre-defined entity references in XML:
+
+&lt;	<	less than
+&gt;	>	greater than
+&amp;	&	ampersand 
+&apos;	'	apostrophe
+&quot;	"	quotation mark
+
+3. XML ELEMENTS
+What is an XML Element?
+An XML element is everything from (including) the element's start tag to (including) the element's end tag.
+
+<price>29.99</price>
+An element can contain:
+
+text
+attributes
+other elements
+or a mix of the above
+<bookstore>
+  <book category="children">
+    <title>Harry Potter</title>
+    <author>J K. Rowling</author>
+    <year>2005</year>
+    <price>29.99</price>
+  </book>
+  <book category="web">
+    <title>Learning XML</title>
+    <author>Erik T. Ray</author>
+    <year>2003</year>
+    <price>39.95</price>
+  </book>
+</bookstore>
+In the example above:
+
+<title>, <author>, <year>, and <price> have text content because they contain text (like 29.99).
+
+<bookstore> and <book> have element contents, because they contain elements.
+
+<book> has an attribute (category="children").
+
+4. XML ATTRIBUTES
+XML elements can have attributes, just like HTML.
+
+Attributes are designed to contain data related to a specific element.
+
+<person gender="female">
+
+5. XML NAMESPACES
+XML Namespaces provide a method to avoid element name conflicts.
+
+Name Conflicts
+In XML, element names are defined by the developer. This often results in a conflict when trying to mix XML documents from different XML applications.
+
+This XML carries HTML table information:
+
+<table>
+  <tr>
+    <td>Apples</td>
+    <td>Bananas</td>
+  </tr>
+</table>
+This XML carries information about a table (a piece of furniture):
+
+<table>
+  <name>African Coffee Table</name>
+  <width>80</width>
+  <length>120</length>
+</table>
+If these XML fragments were added together, there would be a name conflict. Both contain a <table> element, but the elements have different content and meaning.
+
+A user or an XML application will not know how to handle these differences.
+
+Solving the Name Conflict Using a Prefix
+Name conflicts in XML can easily be avoided using a name prefix.
+
+This XML carries information about an HTML table, and a piece of furniture:
+
+<h:table>
+  <h:tr>
+    <h:td>Apples</h:td>
+    <h:td>Bananas</h:td>
+  </h:tr>
+</h:table>
+
+<f:table>
+  <f:name>African Coffee Table</f:name>
+  <f:width>80</f:width>
+  <f:length>120</f:length>
+</f:table>
+In the example above, there will be no conflict because the two <table> elements have different names.
+
+6. XML DISPLAY
+<?xml version="1.0" encoding="UTF-8"?>
+ - <note>
+       <to>Tove</to>
+       <from>Jani</from>
+       <heading>Reminder</heading>
+       <body>Don't forget me this weekend!</body>
+   </note>
+Look at the XML file above in your browser: note.xml
+
+Most browsers will display an XML document with color-coded elements.
+
+Often a plus (+) or minus sign (-) to the left of the elements can be clicked to expand or collapse the element structure.
+
+To view raw XML source, try to select "View Page Source" or "View Source" from the browser menu.
+
+Note: In Safari 5 (and earlier), only the element text will be displayed. To view the raw XML, you must right click the page and select "View Source".
+
+7. XML HTTPREQUEST
+The XMLHttpRequest Object
+The XMLHttpRequest object can be used to request data from a web server.
+
+The XMLHttpRequest object is a developers dream, because you can:
+
+Update a web page without reloading the page
+Request data from a server - after the page has loaded
+Receive data from a server  - after the page has loaded
+Send data to a server - in the background
+
+8. XML PARSER
+The XML DOM (Document Object Model) defines the properties and methods for accessing and editing XML.
+
+However, before an XML document can be accessed, it must be loaded into an XML DOM object.
+
+All modern browsers have a built-in XML parser that can convert text into an XML DOM object.
+
+Parsing a Text String
+This example parses a text string into an XML DOM object, and extracts the info from it with JavaScript:
+
+Example
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+var text, parser, xmlDoc;
+
+text = "<bookstore><book>" +
+"<title>Everyday Italian</title>" +
+"<author>Giada De Laurentiis</author>" +
+"<year>2005</year>" +
+"</book></bookstore>";
+
+parser = new DOMParser();
+xmlDoc = parser.parseFromString(text,"text/xml");
+
+document.getElementById("demo").innerHTML =
+xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+</script>
+
+</body>
+</html>
+
+9. XML DOM
+The XML DOM
+All XML elements can be accessed through the XML DOM.
+
+Books.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<bookstore>
+
+  <book category="cooking">
+    <title lang="en">Everyday Italian</title>
+    <author>Giada De Laurentiis</author>
+    <year>2005</year>
+    <price>30.00</price>
+  </book>
+
+  <book category="children">
+    <title lang="en">Harry Potter</title>
+    <author>J K. Rowling</author>
+    <year>2005</year>
+    <price>29.99</price>
+  </book>
+
+</bookstore>
+This code retrieves the text value of the first <title> element in an XML document:
+
+Example
+txt = xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+The XML DOM is a standard for how to get, change, add, and delete XML elements.
+
+10. XML XPATH
+XPath is a major element in the XSLT standard.
+
+XPath can be used to navigate through elements and attributes in an XML document.
+
+XPath	
+XPath is a syntax for defining parts of an XML document
+XPath uses path expressions to navigate in XML documents
+XPath contains a library of standard functions
+XPath is a major element in XSLT and in XQuery
+XPath is a W3C recommendation
+
+XPath Expression	Result
+/bookstore/book[1]	Selects the first book element that is the child of the bookstore element
+/bookstore/book[last()]	Selects the last book element that is the child of the bookstore element
+/bookstore/book[last()-1]	Selects the last but one book element that is the child of the bookstore element
+/bookstore/book[position()<3]	Selects the first two book elements that are children of the bookstore element
+//title[@lang]	Selects all the title elements that have an attribute named lang
+//title[@lang='en']	Selects all the title elements that have a "lang" attribute with a value of "en"
+/bookstore/book[price>35.00]	Selects all the book elements of the bookstore element that have a price element with a value greater than 35.00
+/bookstore/book[price>35.00]/title	Selects all the title elements of the book elements of the bookstore element that have a price element with a value greater than 35.00
+
+11. XML XSLT
+With XSLT you can transform an XML document into HTML.
+
+Displaying XML with XSLT
+XSLT (eXtensible Stylesheet Language Transformations) is the recommended style sheet language for XML.
+
+XSLT is far more sophisticated than CSS. With XSLT you can add/remove elements and attributes to or from the output file. You can also rearrange and sort elements, perform tests and make decisions about which elements to hide and display, and a lot more.
+
+XSLT uses XPath to find information in an XML document.
+
+XSLT Example
+We will use the following XML document:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<breakfast_menu>
+
+<food>
+<name>Belgian Waffles</name>
+<price>$5.95</price>
+<description>Two of our famous Belgian Waffles with plenty of real maple syrup</description>
+<calories>650</calories>
+</food>
+
+<food>
+<name>Strawberry Belgian Waffles</name>
+<price>$7.95</price>
+<description>Light Belgian waffles covered with strawberries and whipped cream</description>
+<calories>900</calories>
+</food>
+
+<food>
+<name>Berry-Berry Belgian Waffles</name>
+<price>$8.95</price>
+<description>Light Belgian waffles covered with an assortment of fresh berries and whipped cream</description>
+<calories>900</calories>
+</food>
+
+<food>
+<name>French Toast</name>
+<price>$4.50</price>
+<description>Thick slices made from our homemade sourdough bread</description>
+<calories>600</calories>
+</food>
+
+<food>
+<name>Homestyle Breakfast</name>
+<price>$6.95</price>
+<description>Two eggs, bacon or sausage, toast, and our ever-popular hash browns</description>
+<calories>950</calories>
+</food>
+
+</breakfast_menu>
+
+12. XML XQUERY
+XQuery is to XML what SQL is to databases.
+
+XQuery was designed to query XML data.
+
+XQuery Example
+for $x in doc("books.xml")/bookstore/book
+where $x/price>30
+order by $x/title
+return $x/title
+
+What is XQuery?
+XQuery	
+XQuery is the language for querying XML data
+XQuery for XML is like SQL for databases
+XQuery is built on XPath expressions
+XQuery is supported by all major databases
+XQuery is a W3C Recommendation
+
+
+13. XML XLINK
+XLink is used to create hyperlinks in XML documents.
+
+XPath	
+XLink is used to create hyperlinks within XML documents
+Any element in an XML document can behave as a link
+With XLink, the links can be defined outside the linked files
+XLink is a W3C Recommendation
+XLink Browser Support
+There is no browser support for XLink in XML documents.
+
+However, all major browsers support XLinks in SVG.
+
+XLink Syntax
+In HTML, the <a> element defines a hyperlink. However, this is not how it works in XML. In XML documents, you can use whatever element names you want - therefore it is impossible for browsers to predict what link elements will be called in XML documents.
+
+Below is a simple example of how to use XLink to create links in an XML document:
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<homepages xmlns:xlink="http://www.w3.org/1999/xlink">
+  <homepage xlink:type="simple" xlink:href="https://www.w3schools.com">Visit W3Schools</homepage>
+  <homepage xlink:type="simple" xlink:href="http://www.w3.org">Visit W3C</homepage>
+</homepages>
+
+14. XML VALIDATOR
+Use our XML validator to syntax-check your XML.
+
+Well Formed XML Documents
+An XML document with correct syntax is called "Well Formed".
+
+The syntax rules were described in the previous chapters:
+
+XML documents must have a root element
+XML elements must have a closing tag
+XML tags are case sensitive
+XML elements must be properly nested
+XML attribute values must be quoted
+<?xml version="1.0" encoding="UTF-8"?>
+<note>
+<to>Tove</to>
+<from>Jani</from>
+<heading>Reminder</heading>
+<body>Don't forget me this weekend!</body>
+</note>
+
+15. XML DTD
+An XML document with correct syntax is called "Well Formed".
+
+An XML document validated against a DTD is both "Well Formed" and "Valid".
+
+What is a DTD?
+DTD stands for Document Type Definition.
+
+A DTD defines the structure and the legal elements and attributes of an XML document.
+
+Valid XML Documents
+A "Valid" XML document is "Well Formed", as well as it conforms to the rules of a DTD:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "Note.dtd">
+<note>
+<to>Tove</to>
+<from>Jani</from>
+<heading>Reminder</heading>
+<body>Don't forget me this weekend!</body>
+</note>
+The DOCTYPE declaration above contains a reference to a DTD file. The content of the DTD file is shown and explained below.
+
+XML DTD
+The purpose of a DTD is to define the structure and the legal elements and attributes of an XML document:
+
+Note.dtd:
+<!DOCTYPE note
+[
+<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+]>
+The DTD above is interpreted like this:
+
+!DOCTYPE note -  Defines that the root element of the document is note
+!ELEMENT note - Defines that the note element must contain the elements: "to, from, heading, body"
+!ELEMENT to - Defines the to element to be of type "#PCDATA"
+!ELEMENT from - Defines the from element to be of type "#PCDATA"
+!ELEMENT heading  - Defines the heading element to be of type "#PCDATA"
+!ELEMENT body - Defines the body element to be of type "#PCDATA"
+
+16. XML SCHEMA
+An XML Schema describes the structure of an XML document, just like a DTD.
+
+An XML document with correct syntax is called "Well Formed".
+
+An XML document validated against an XML Schema is both "Well Formed" and "Valid".
+
+XML Schema
+XML Schema is an XML-based alternative to DTD:
+
+<xs:element name="note">
+
+<xs:complexType>
+  <xs:sequence>
+    <xs:element name="to" type="xs:string"/>
+    <xs:element name="from" type="xs:string"/>
+    <xs:element name="heading" type="xs:string"/>
+    <xs:element name="body" type="xs:string"/>
+  </xs:sequence>
+</xs:complexType>
+
+</xs:element>
+The Schema above is interpreted like this:
+
+<xs:element name="note"> defines the element called "note"
+<xs:complexType> the "note" element is a complex type
+<xs:sequence> the complex type is a sequence of elements
+<xs:element name="to" type="xs:string"> the element "to" is of type string (text)
+<xs:element name="from" type="xs:string"> the element "from" is of type string
+<xs:element name="heading" type="xs:string"> the element "heading" is of type string
+<xs:element name="body" type="xs:string"> the element "body" is of type string
+
+17. XML SERVER
+Generating XML with PHP
+XML can be generated on a server without any installed XML software.
+
+To generate an XML response from the server using PHP, use following code:
+
+<?php
+header("Content-type: text/xml");
+echo "<?xml version='1.0' encoding='UTF-8'?>";
+echo "<note>";
+echo "<from>Jani</from>";
+echo "<to>Tove</to>";
+echo "<message>Remember me this weekend</message>";
+echo "</note>";
+?>
+Note that the content type of the response header must be set to "text/xml".

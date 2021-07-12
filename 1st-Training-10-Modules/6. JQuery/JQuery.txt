@@ -1,0 +1,377 @@
+0. INTRODUCTION
+jQuery is a JavaScript Library.
+
+jQuery greatly simplifies JavaScript programming.
+
+jQuery is easy to learn.
+
+Example
+$(document).ready(function(){
+  $("p").click(function(){
+    $(this).hide();
+  });
+});
+
+jQuery is a lightweight, "write less, do more", JavaScript library.
+
+The purpose of jQuery is to make it much easier to use JavaScript on your website.
+
+jQuery takes a lot of common tasks that require many lines of JavaScript code to accomplish, and wraps them into methods that you can call with a single line of code.
+
+jQuery also simplifies a lot of the complicated things from JavaScript, like AJAX calls and DOM manipulation.
+
+The jQuery library contains the following features:
+
+HTML/DOM manipulation
+CSS manipulation
+HTML event methods
+Effects and animations
+AJAX
+Utilities
+
+There are several ways to start using jQuery on your web site. You can:
+
+Download the jQuery library from jQuery.com
+Include jQuery from a CDN, like Google
+There are two versions of jQuery available for downloading:
+
+Production version - this is for your live website because it has been minified and compressed
+Development version - this is for testing and development (uncompressed and readable code)
+Both versions can be downloaded from jQuery.com.
+
+The jQuery library is a single JavaScript file, and you reference it with the HTML <script> tag (notice that the <script> tag should be inside the <head> section):
+
+<head>
+<script src="jquery-3.5.1.min.js"></script>
+</head>
+
+he jQuery syntax is tailor-made for selecting HTML elements and performing some action on the element(s).
+
+Basic syntax is: $(selector).action()
+
+A $ sign to define/access jQuery
+A (selector) to "query (or find)" HTML elements
+A jQuery action() to be performed on the element(s)
+Examples:
+
+$(this).hide() - hides the current element.
+
+$("p").hide() - hides all <p> elements.
+
+$(".test").hide() - hides all elements with class="test".
+
+$("#test").hide() - hides the element with id="test".
+
+$(document).ready(function(){
+
+  // jQuery methods go here...
+
+});
+This is to prevent any jQuery code from running before the document is finished loading (is ready).
+
+It is good practice to wait for the document to be fully loaded and ready before working with it. This also allows you to have your JavaScript code before the body of your document, in the head section.
+
+Here are some examples of actions that can fail if methods are run before the document is fully loaded:
+
+Trying to hide an element that is not created yet
+Trying to get the size of an image that is not loaded yet
+
+The jQuery team has also created an even shorter method for the document ready event:
+
+$(function(){
+
+  // jQuery methods go here...
+
+});
+
+1. JQUERY SELECTORS
+jQuery selectors allow you to select and manipulate HTML element(s).
+
+jQuery selectors are used to "find" (or select) HTML elements based on their name, id, classes, types, attributes, values of attributes and much more. It's based on the existing CSS Selectors, and in addition, it has some own custom selectors.
+
+All selectors in jQuery start with the dollar sign and parentheses: $().
+
+Syntax	Description	Example
+$("*")	Selects all elements	
+$(this)	Selects the current HTML element	
+$("p.intro")	Selects all <p> elements with class="intro"	
+$("p:first")	Selects the first <p> element	
+$("ul li:first")	Selects the first <li> element of the first <ul>	
+$("ul li:first-child")	Selects the first <li> element of every <ul>	
+$("[href]")	Selects all elements with an href attribute	
+$("a[target='_blank']")	Selects all <a> elements with a target attribute value equal to "_blank"	
+$("a[target!='_blank']")	Selects all <a> elements with a target attribute value NOT equal to "_blank"	
+$(":button")	Selects all <button> elements and <input> elements of type="button"	
+$("tr:even")	Selects all even <tr> elements	
+$("tr:odd")	Selects all odd <tr> elements	
+
+All the different visitors' actions that a web page can respond to are called events.
+
+An event represents the precise moment when something happens.
+
+Examples:
+
+moving a mouse over an element
+selecting a radio button
+clicking on an element
+The term "fires/fired" is often used with events. Example: "The keypress event is fired, the moment you press a key".
+
+Here are some common DOM events:
+
+Mouse Events	Keyboard Events	Form Events	Document/Window Events
+click	keypress	submit	load
+dblclick	keydown	change	resize
+mouseenter	keyup	focus	scroll
+mouseleave	 	blur	unload
+
+2. JQUERY EVENTS
+Attach multiple event handlers to a <p> element:
+
+Example
+$("p").on({
+  mouseenter: function(){
+    $(this).css("background-color", "lightgray");
+  },
+  mouseleave: function(){
+    $(this).css("background-color", "lightblue");
+  },
+  click: function(){
+    $(this).css("background-color", "yellow");
+  }
+});
+
+3. JQUERY HIDE AND SHOW
+jQuery hide() and show()
+With jQuery, you can hide and show HTML elements with the hide() and show() methods:
+
+Example
+$("#hide").click(function(){
+  $("p").hide();
+});
+
+$("#show").click(function(){
+  $("p").show();
+});
+
+4. JQUERY FADE
+
+With jQuery you can fade elements in and out of visibility.
+
+
+Examples
+jQuery fadeIn()
+Demonstrates the jQuery fadeIn() method.
+
+jQuery fadeOut()
+Demonstrates the jQuery fadeOut() method.
+
+jQuery fadeToggle()
+Demonstrates the jQuery fadeToggle() method.
+
+jQuery fadeTo()
+Demonstrates the jQuery fadeTo() method.
+
+5. JQUERY SLIDE
+The jQuery slide methods slide elements up and down.
+
+
+Examples
+jQuery slideDown()
+Demonstrates the jQuery slideDown() method.
+
+jQuery slideUp()
+Demonstrates the jQuery slideUp() method.
+
+jQuery slideToggle()
+Demonstrates the jQuery slideToggle() method.
+
+6. JQUERY ANIMATE
+The jQuery animate() method is used to create custom animations.
+
+Syntax:
+
+$(selector).animate({params},speed,callback);
+The required params parameter defines the CSS properties to be animated.
+
+The optional speed parameter specifies the duration of the effect. It can take the following values: "slow", "fast", or milliseconds.
+
+7. JQUERY STOP
+jQuery stop() Method
+The jQuery stop() method is used to stop an animation or effect before it is finished.
+
+The stop() method works for all jQuery effect functions, including sliding, fading and custom animations.
+
+Syntax:
+
+$(selector).stop(stopAll,goToEnd);
+The optional stopAll parameter specifies whether also the animation queue should be cleared or not. Default is false, which means that only the active animation will be stopped, allowing any queued animations to be performed afterwards.
+
+The optional goToEnd parameter specifies whether or not to complete the current animation immediately. Default is false.
+
+So, by default, the stop() method kills the current animation being performed on the selected element.
+
+The following example demonstrates the stop() method, with no parameters:
+
+Example
+$("#stop").click(function(){
+  $("#panel").stop();
+});
+
+8. JQUERY GET
+jQuery contains powerful methods for changing and manipulating HTML elements and attributes.
+
+jQuery DOM Manipulation
+One very important part of jQuery is the possibility to manipulate the DOM.
+
+jQuery comes with a bunch of DOM related methods that make it easy to access and manipulate elements and attributes.
+
+Three simple, but useful, jQuery methods for DOM manipulation are:
+
+text() - Sets or returns the text content of selected elements
+html() - Sets or returns the content of selected elements (including HTML markup)
+val() - Sets or returns the value of form fields
+
+9. JQUERY SET
+Set Content - text(), html(), and val()
+We will use the same three methods from the previous page to set content:
+
+text() - Sets or returns the text content of selected elements
+html() - Sets or returns the content of selected elements (including HTML markup)
+val() - Sets or returns the value of form fields
+The following example demonstrates how to set content with the jQuery text(), html(), and val() methods:
+
+Example
+$("#btn1").click(function(){
+  $("#test1").text("Hello world!");
+});
+$("#btn2").click(function(){
+  $("#test2").html("<b>Hello world!</b>");
+});
+$("#btn3").click(function(){
+  $("#test3").val("Dolly Duck");
+});
+
+10. JQUERY ADD
+Add New HTML Content
+We will look at four jQuery methods that are used to add new content:
+
+append() - Inserts content at the end of the selected elements
+prepend() - Inserts content at the beginning of the selected elements
+after() - Inserts content after the selected elements
+before() - Inserts content before the selected elements
+
+11. JQUERY REMOVE
+Remove Elements/Content
+To remove elements and content, there are mainly two jQuery methods:
+
+remove() - Removes the selected element (and its child elements)
+empty() - Removes the child elements from the selected element
+
+
+12. JQUERY CSS CLASSES
+jQuery Manipulating CSS
+jQuery has several methods for CSS manipulation. We will look at the following methods:
+
+addClass() - Adds one or more classes to the selected elements
+removeClass() - Removes one or more classes from the selected elements
+toggleClass() - Toggles between adding/removing classes from the selected elements
+css() - Sets or returns the style attribute
+
+13. JQUERY CSS
+The css() method sets or returns one or more style properties for the selected elements.
+
+Return a CSS Property
+To return the value of a specified CSS property, use the following syntax:
+
+css("propertyname");
+The following example will return the background-color value of the FIRST matched element:
+
+Example
+$("p").css("background-color");
+
+Set a CSS Property
+To set a specified CSS property, use the following syntax:
+
+css("propertyname","value");
+The following example will set the background-color value for ALL matched elements:
+
+Example
+$("p").css("background-color", "yellow");
+
+14. JQUERY DIMENSIONS
+jQuery has several important methods for working with dimensions:
+
+width()
+height()
+innerWidth()
+innerHeight()
+outerWidth()
+outerHeight()
+
+jQuery width() and height() Methods
+The width() method sets or returns the width of an element (excludes padding, border and margin).
+
+The height() method sets or returns the height of an element (excludes padding, border and margin).
+
+The following example returns the width and height of a specified <div> element:
+
+Example
+$("button").click(function(){
+  var txt = "";
+  txt += "Width: " + $("#div1").width() + "</br>";
+  txt += "Height: " + $("#div1").height();
+  $("#div1").html(txt);
+});
+
+15. JQUERY TRAVERSING
+
+What is Traversing?
+jQuery traversing, which means "move through", are used to "find" (or select) HTML elements based on their relation to other elements. Start with one selection and move through that selection until you reach the elements you desire.
+
+The image below illustrates an HTML page as a tree (DOM tree). With jQuery traversing, you can easily move up (ancestors), down (descendants) and sideways (siblings) in the tree, starting from the selected (current) element. This movement is called traversing - or moving through - the DOM tree.
+
+Traversing Up the DOM Tree
+Three useful jQuery methods for traversing up the DOM tree are:
+
+parent()
+parents()
+parentsUntil()
+
+Traversing Down the DOM Tree
+Two useful jQuery methods for traversing down the DOM tree are:
+
+children()
+find()
+
+jQuery find() Method
+The find() method returns descendant elements of the selected element, all the way down to the last descendant.
+
+The following example returns all <span> elements that are descendants of <div>:
+
+Example
+$(document).ready(function(){
+  $("div").find("span");
+});
+
+
+Traversing Sideways in The DOM Tree
+There are many useful jQuery methods for traversing sideways in the DOM tree:
+
+siblings()
+next()
+nextAll()
+nextUntil()
+prev()
+prevAll()
+prevUntil()
+
+jQuery filter() Method
+The filter() method lets you specify a criteria. Elements that do not match the criteria are removed from the selection, and those that match will be returned.
+
+The following example returns all <p> elements with class name "intro":
+
+Example
+$(document).ready(function(){
+  $("p").filter(".intro");
+});
+

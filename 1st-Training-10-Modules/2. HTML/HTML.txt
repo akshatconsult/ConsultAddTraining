@@ -1,0 +1,399 @@
+HTML is the standard markup language for creating Web pages.
+
+1. What is HTML?
+HTML stands for Hyper Text Markup Language
+HTML is the standard markup language for creating Web pages
+HTML describes the structure of a Web page
+HTML consists of a series of elements
+HTML elements tell the browser how to display the content
+HTML elements label pieces of content such as "this is a heading", "this is a paragraph", "this is a link", etc.
+
+
+2. The <!DOCTYPE html> declaration defines that this document is an HTML5 document
+The <html> element is the root element of an HTML page
+The <head> element contains meta information about the HTML page
+The <title> element specifies a title for the HTML page (which is shown in the browser's title bar or in the page's tab)
+The <body> element defines the document's body, and is a container for all the visible contents, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.
+The <h1> element defines a large heading
+The <p> element defines a paragraph
+
+
+3. An HTML element is defined by a start tag, some content, and an end tag:
+<tagname>Content goes here...</tagname>
+The HTML element is everything from the start tag to the end tag:
+
+4. HTML Documents
+All HTML documents must start with a document type declaration: <!DOCTYPE html>.
+The HTML document itself begins with <html> and ends with </html>.
+The visible part of the HTML document is between <body> and </body>.
+
+5. HTML Images
+HTML images are defined with the <img> tag.
+The source file (src), alternative text (alt), width, and height are provided as attributes:
+
+6. HTML Attributes
+All HTML elements can have attributes
+Attributes provide additional information about elements
+Attributes are always specified in the start tag
+Attributes usually come in name/value pairs like: name="value"
+The href Attribute
+The <a> tag defines a hyperlink. The href attribute specifies the URL of the page the link goes to:
+
+7. HTML Styles
+Use the style attribute for styling HTML elements
+Use background-color for background color
+Use color for text colors
+Use font-family for text fonts
+Use font-size for text sizes
+Use text-align for text alignment
+
+8. HTML Formatting
+<b>	Defines bold text
+<em>	Defines emphasized text 
+<i>	Defines a part of text in an alternate voice or mood
+<small>	Defines smaller text
+<strong>	Defines important text
+<sub>	Defines subscripted text
+<sup>	Defines superscripted text
+<ins>	Defines inserted text
+<del>	Defines deleted text
+<mark>	Defines marked/highlighted text
+
+9. HTML Quotations
+HTML Quotation and Citation Elements
+Tag	Description
+<abbr>	Defines an abbreviation or acronym
+<address>	Defines contact information for the author/owner of a document
+<bdo>	Defines the text direction
+<blockquote>	Defines a section that is quoted from another source
+<cite>	Defines the title of a work
+<q>	Defines a short inline quotation
+
+10. HTML Comments
+<!-- Do not display this image at the moment
+<img border="0" src="pic_trulli.jpg" alt="Trulli">
+-->
+
+11. HTML Colors
+<h1 style="border:2px solid Violet;">Hello World</h1>
+<h1 style="background-color:rgb(255, 99, 71);">...</h1>
+<h1 style="background-color:#ff6347;">...</h1>
+<h1 style="background-color:hsl(9, 100%, 64%);">...</h1>
+<h1 style="background-color:rgba(255, 99, 71, 0.5);">...</h1>
+<h1 style="background-color:hsla(9, 100%, 64%, 0.5);">...</h1>
+
+12. HTML CSS
+Chapter Summary
+Use the HTML style attribute for inline styling
+Use the HTML <style> element to define internal CSS
+Use the HTML <link> element to refer to an external CSS file
+Use the HTML <head> element to store <style> and <link> elements
+Use the CSS color property for text colors
+Use the CSS font-family property for text fonts
+Use the CSS font-size property for text sizes
+Use the CSS border property for borders
+Use the CSS padding property for space inside the border
+Use the CSS margin property for space outside the border
+
+
+13. HTML Links
+Use the <a> element to define a link
+Use the href attribute to define the link address
+Use the target attribute to define where to open the linked document
+Use the <img> element (inside <a>) to use an image as a link
+Use the mailto: scheme inside the href attribute to create a link that opens the user's email program
+
+Use target="_blank" to open the linked document in a new browser window or tab:
+
+<a href="https://www.w3schools.com/" target="_blank">Visit W3Schools!</a>
+
+Use mailto: inside the href attribute to create a link that opens the user's email program (to let them send a new email):
+
+<button onclick="document.location='default.asp'">HTML Tutorial</button>
+
+Use the id attribute (id="value") to define bookmarks in a page
+Use the href attribute (href="#value") to link to the bookmark
+
+14. HTML Images
+Use the HTML <img> element to define an image
+Use the HTML src attribute to define the URL of the image
+Use the HTML alt attribute to define an alternate text for an image, if it cannot be displayed
+Use the HTML width and height attributes or the CSS width and height properties to define the size of the image
+Use the CSS float property to let the image float to the left or to the right
+
+The image is inserted using the <img> tag. The only difference from other images is that you must add a usemap attribute:
+
+<img src="workplace.jpg" alt="Workplace" usemap="#workmap">
+The usemap value starts with a hash tag # followed by the name of the image map, and is used to create a relationship between the image and the image map.
+
+<h2>Image Maps</h2>
+<p>Click on the computer, to go to a new page and read more about the topic:</p>
+
+<img src="workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
+
+<map name="workmap">
+  <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+</map>
+
+
+Tag	Description
+<img>	Defines an image
+<map>	Defines an image map
+<area>	Defines a clickable area inside an image map
+<picture>	Defines a container for multiple image resources
+
+
+
+
+Hi Hemant, I am Akshat from ConsultAdd.
+Had just few queries regarding the meal reimbursement.
+May I ask?
+1. Will multiple orders from different restaurants would be acceptable (like a bill of 500, 500 and 1000 from three different restaurants.
+2. If I'm ordering through swiggy and the bill consist of only swiggy order number and no GST number, then is it acceptable.
+3. Instead of today if I order tomorrow or on Sunday, would I be eligible for reimbursement
+4. If I order meal from SuperStores like Big Bazaar, for snacks and beverages, is that also considered for reimbursement?
+
+15. HTML Tables
+Use the HTML <table> element to define a table
+Use the HTML <tr> element to define a table row
+Use the HTML <td> element to define a table data
+Use the HTML <th> element to define a table heading
+Use the HTML <caption> element to define a table caption
+Use the CSS border property to define a border
+Use the CSS border-collapse property to collapse cell borders
+Use the CSS padding property to add padding to cells
+Use the CSS text-align property to align cell text
+Use the CSS border-spacing property to set the spacing between cells
+Use the colspan attribute to make a cell span many columns
+Use the rowspan attribute to make a cell span many rows
+Use the id attribute to uniquely define one table
+
+HTML Table Tags
+Tag	Description
+<table>	Defines a table
+<th>	Defines a header cell in a table
+<tr>	Defines a row in a table
+<td>	Defines a cell in a table
+<caption>	Defines a table caption
+<colgroup>	Specifies a group of one or more columns in a table for formatting
+<col>	Specifies column properties for each column within a <colgroup> element
+<thead>	Groups the header content in a table
+<tbody>	Groups the body content in a table
+<tfoot>	Groups the footer content in a table
+
+
+16. HTML Lists
+
+Tag	Description
+<ul>	Defines an unordered list
+<ol>	Defines an ordered list
+<li>	Defines a list item
+<dl>	Defines a description list
+<dt>	Defines a term in a description list
+<dd>	Describes the term in a description list
+
+17. HTML BLock & Inline
+
+18. HTML Classes
+The Syntax For Class
+To create a class; write a period (.) character, followed by a class name. Then, define the CSS properties within curly braces {}:
+
+Example
+<style>
+.city {
+  background-color: tomato;
+  color: white;
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+
+<h2 class="city">London</h2>
+<p>London is the capital of England.</p>
+The HTML class attribute specifies one or more class names for an element
+Classes are used by CSS and JavaScript to select and access specific elements
+The class attribute can be used on any HTML element
+The class name is case sensitive
+Different HTML elements can point to the same class name
+JavaScript can access elements with a specific class name with the getElementsByClassName() method
+
+
+18. HTML ID
+
+Difference Between Class and ID
+A class name can be used by multiple HTML elements, while an id name must only be used by one HTML element within the page:
+
+Chapter Summary
+The id attribute is used to specify a unique id for an HTML element
+The value of the id attribute must be unique within the HTML document
+The id attribute is used by CSS and JavaScript to style/select a specific element
+The value of the id attribute is case sensitive
+The id attribute is also used to create HTML bookmarks
+JavaScript can access an element with a specific id with the getElementById() method
+
+<h2 id="C4">Chapter 4</h2>
+<a href="html_demo.html#C4">Jump to Chapter 4</a>
+<a href="#C4">Jump to Chapter 4</a>
+
+19. HTML Iframes
+An HTML iframe is used to display a web page within a web page.
+The HTML <iframe> tag specifies an inline frame
+The src attribute defines the URL of the page to embed
+Always include a title attribute (for screen readers)
+The height and width attributes specifies the size of the iframe
+Use border:none; to remove the border around the iframe
+
+<iframe src="demo_iframe.htm" style="border:2px solid red;" title="Iframe Example"></iframe>
+
+20. HTML JavaScript
+The HTML <script> Tag
+The HTML <script> tag is used to define a client-side script (JavaScript).
+
+The <script> element either contains script statements, or it points to an external script file through the src attribute.
+
+Common uses for JavaScript are image manipulation, form validation, and dynamic changes of content.
+
+document.getElementById("demo").innerHTML = "Hello JavaScript!";
+document.getElementById("demo").style.fontSize = "25px";
+document.getElementById("image").src = "picture.gif";
+
+The HTML <noscript> Tag
+The HTML <noscript> tag defines an alternate content to be displayed to users that have disabled scripts in their browser or have a browser that doesn't support scripts:
+
+21. HTML Head
+
+<link rel="stylesheet" href="mystyle.css">
+
+The HTML <meta> Element
+The <meta> element is typically used to specify the character set, page description, keywords, author of the document, and viewport settings.
+
+The metadata will not be displayed on the page, but are used by browsers (how to display content or reload page), by search engines (keywords), and other web services.
+
+The <head> element is a container for metadata (data about data)
+The <head> element is placed between the <html> tag and the <body> tag
+The <title> element is required and it defines the title of the document
+The <style> element is used to define style information for a single document
+The <link> tag is most often used to link to external style sheets
+The <meta> element is typically used to specify the character set, page description, keywords, author of the document, and viewport settings
+The <script> element is used to define client-side JavaScripts
+The <base> element specifies the base URL and/or target for all relative URLs in a page
+
+22. HTML Computercode
+
+HTML <kbd> For Keyboard Input
+The HTML <kbd> element is used to define keyboard input. The content inside is displayed in the browser's default monospace font.
+
+<pre>
+<code>
+x = 5;
+y = 6;
+z = x + y;
+</code>
+</pre>
+
+The HTML <var> element  is used to define a variable in programming or in a mathematical expression. The content inside is typically displayed in italic.
+
+The <kbd> element defines keyboard input
+The <samp> element defines sample output from a computer program
+The <code> element defines a piece of computer code
+The <var> element defines a variable in programming or in a mathematical expression
+The <pre> element defines preformatted text
+
+23. HTML FORMS
+HTML Forms
+An HTML form is used to collect user input. The user input is most often sent to a server for processing.
+
+The <input> Element
+The HTML <input> element is the most used form element.
+
+An <input> element can be displayed in many ways, depending on the type attribute.
+
+Type	Description
+<input type="text">	Displays a single-line text input field
+<input type="radio">	Displays a radio button (for selecting one of many choices)
+<input type="checkbox">	Displays a checkbox (for selecting zero or more of many choices)
+<input type="submit">	Displays a submit button (for submitting the form)
+<input type="button">	Displays a clickable button
+
+The method attribute specifies the HTTP method to be used when submitting the form data.
+
+The form-data can be sent as URL variables (with method="get") or as HTTP post transaction (with method="post").
+
+Notes on GET:
+
+Appends the form data to the URL, in name/value pairs
+NEVER use GET to send sensitive data! (the submitted form data is visible in the URL!)
+The length of a URL is limited (2048 characters)
+Useful for form submissions where a user wants to bookmark the result
+GET is good for non-secure data, like query strings in Google
+Notes on POST:
+
+Appends the form data inside the body of the HTTP request (the submitted form data is not shown in the URL)
+POST has no size limitations, and can be used to send large amounts of data.
+Form submissions with POST cannot be bookmarked
+
+
+<label for="cars">Choose a car:</label>
+<select id="cars" name="cars">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="fiat">Fiat</option>
+  <option value="audi">Audi</option>
+</select>
+
+The HTML <form> element can contain one or more of the following form elements:
+
+<input>
+<label>
+<select>
+<textarea>
+<button>
+<fieldset>
+<legend>
+<datalist>
+<output>
+<option>
+<optgroup>
+
+Tag	Description
+<form>	Defines an HTML form for user input
+<input>	Defines an input control
+<textarea>	Defines a multiline input control (text area)
+<label>	Defines a label for an <input> element
+<fieldset>	Groups related elements in a form
+<legend>	Defines a caption for a <fieldset> element
+<select>	Defines a drop-down list
+<optgroup>	Defines a group of related options in a drop-down list
+<option>	Defines an option in a drop-down list
+<button>	Defines a clickable button
+<datalist>	Specifies a list of pre-defined options for input controls
+<output>	Defines the result of a calculation
+
+
+HTML Input Types
+Here are the different input types you can use in HTML:
+
+<input type="button">
+<input type="checkbox">
+<input type="color">
+<input type="date">
+<input type="datetime-local">
+<input type="email">
+<input type="file">
+<input type="hidden">
+<input type="image">
+<input type="month">
+<input type="number">
+<input type="password">
+<input type="radio">
+<input type="range">
+<input type="reset">
+<input type="search">
+<input type="submit">
+<input type="tel">
+<input type="text">
+<input type="time">
+<input type="url">
+<input type="week">
+
